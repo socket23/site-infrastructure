@@ -1,0 +1,36 @@
+# Docker
+*.log
+.env
+.env.local
+
+# Build artifacts
+*.tar
+*.tar.gz
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+*.cache
+
+# SSL/TLS certificates and keys (if any local testing)
+*.pem
+*.key
+*.crt
+*.csr
+
+# Docker volumes data (if mounted locally)
+volumes/
+data/
+

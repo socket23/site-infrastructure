@@ -1,0 +1,106 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Socket23 — Fast, Secure, Simple</title>
+  <meta name="description" content="A lightweight, secure static site running on hardened Docker & unprivileged Nginx." />
+  <meta property="og:title" content="Socket23 — Fast, Secure, Simple" />
+  <meta property="og:description" content="Hardened static site on Docker & Nginx (unprivileged)." />
+  <meta property="og:type" content="website" />
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300D1B2'/><text x='50' y='58' font-size='42' text-anchor='middle' fill='white'>S</text></svg>">
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/scripts.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">Socket23</a>
+      <nav id="menu" class="menu" data-state="closed">
+        <a href="#features">Features</a>
+        <a href="#security">Security</a>
+        <a href="#deploy">Deploy</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Welcome Sysadmins, time to plug into Socket23! here to help your security configuration goals.</h1>
+        <p>Static site. Unprivileged Nginx. Docker hardened. Multi‑arch images that run anywhere.</p>
+        <div class="actions">
+          <a class="btn primary" href="#deploy">Deploy in minutes</a>
+          <a class="btn ghost" href="#security">See hardening</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="panel">
+      <div class="container grid-3">
+        <article class="card">
+          <h3>Zero Runtime Code</h3>
+          <p>Pure static assets with long‑lived caching and a strict Content‑Security‑Policy.</p>
+        </article>
+        <article class="card">
+          <h3>Non‑root by Design</h3>
+          <p>Unprivileged Nginx on port 8080, read‑only FS, tmpfs for runtime dirs, caps dropped.</p>
+        </article>
+        <article class="card">
+          <h3>Multi‑Arch Images</h3>
+          <p>Buildx targets <code>amd64</code>, <code>arm64</code>, and <code>armv7</code> for Odroid/RPi clusters.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="security" class="panel alt">
+      <div class="container grid-2">
+        <article class="card">
+          <h3>Defense‑in‑Depth</h3>
+          <ul>
+            <li>Content‑Security‑Policy + strict headers</li>
+            <li>Read‑only container FS</li>
+            <li>Drop <code>ALL</code> Linux capabilities</li>
+            <li>No shell or extra packages in final image</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Operational Safety</h3>
+          <ul>
+            <li>Healthchecks and start‑first updates</li>
+            <li>Immutable cache for assets</li>
+            <li>Minimal surface area</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="deploy" class="panel">
+      <div class="container">
+        <h2>Deploy</h2>
+        <ol class="steps">
+          <li>Build & push a multi‑arch image with <code>Make release</code>.</li>
+          <li><code>docker stack deploy -c stack.yaml web</code></li>
+          <li>Place behind your reverse proxy/TLS if desired.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact" class="panel alt">
+      <div class="container">
+        <h2>Questions?</h2>
+        <p>Swap out content in <code>site/</code> and re‑deploy. It's that simple.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Socket23. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
