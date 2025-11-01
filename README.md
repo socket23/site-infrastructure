@@ -14,9 +14,7 @@ IPFire Firewall (HAProxy + Let's Encrypt TLS)
     ├─ :80 (HTTP) → 301 redirect to HTTPS
     ↓
 Odroid (Docker Swarm Manager)
-    ├─ Production: :8080 (host-mode)
-    ├─ Canary: :8081 (ingress-mode, /canary path)
-    └─ Local Registry: :5000 (host-mode)
+    └─ Production: :8080 (host-mode)
 ```
 
 ### Key Components
@@ -25,7 +23,7 @@ Odroid (Docker Swarm Manager)
 - **Container Orchestration**: Docker Swarm (single-node manager)
 - **Web Server**: NGINX (unprivileged, read-only containers)
 - **Edge Proxy**: HAProxy on IPFire with Let's Encrypt (dehydrated)
-- **Image Registry**: Local Docker registry for multi-arch images
+- **Image Registry**: GitHub Container Registry (ghcr.io)
 - **TLS**: Let's Encrypt certificates via dehydrated
 
 ## 🔒 Security Features
@@ -43,92 +41,61 @@ Odroid (Docker Swarm Manager)
 ```
 .
 ├── README.md                                    # This file
-└── static-site/
-    ├── Dockerfile                               # ARMv7 NGINX image
-    ├── Makefile                                 # Build automation
-    ├── nginx.conf                               # NGINX configuration
-    ├── compose.yaml                             # Docker Compose (dev)
-    ├── stack.yaml                               # Docker Stack (production)
-    └── site/                                    # Static website content
-        ├── index.html
-        ├── 404.html
-        ├── styles.css
-        └── scripts.js
+├── socket23_static_site_playbook.md            # Complete deployment guide
+├── socket23_static_site_playbook (1).md        # IPFire firewall configuration
+└── static-site-v2/
+    └── static-site/
+        ├── Dockerfile                           # Multi-arch NGINX image
+        ├── Makefile                             # Build automation
+        ├── nginx.conf                           # NGINX configuration
+        ├── compose.yaml                         # Docker Compose (dev)
+        ├── stack.yaml                           # Docker Stack (production)
+        ├── site/                                # Static website content
+        │   ├── index.html
+        │   ├── 404.html
+        │   ├── styles.css
+        │   └── scripts.js
+        └── .dockerignore
 ```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Odroid or similar ARMv7 device with Debian 11+
 - Docker 20.10+ with Swarm mode enabled
-- IPFire firewall (optional, for production TLS)
-- Domain name with DNS configured
+- ARMv7, ARM64, or AMD64 architecture
 
 ### 1. Initialize Docker Swarm
 
 ```bash
 docker swarm init
-docker node ls
 ```
 
-### 2. Deploy Local Registry
+### 2. Clone and Deploy
 
 ```bash
-docker service create --name registry \
-  --constraint 'node.role == manager' \
-  --mount type=bind,src=/var/lib/registry,dst=/var/lib/registry \
-  --publish mode=host,published=5000,target=5000 \
-  registry:2
+git clone https://github.com/socket23/site-infrastructure.git
+cd site-infrastructure/static-site
+docker stack deploy -c stack.yaml web
 ```
 
-### 3. Build and Push Image
+### 3. Verify Deployment
 
 ```bash
-cd static-site
-make build
-make push
-```
-
-### 4. Deploy Production Stack
-
-```bash
-docker stack deploy --with-registry-auth --resolve-image=never \
-  -c stack.yaml simple-web-stack
-```
-
-### 5. Verify Deployment
-
-```bash
-docker service ps simple-web-stack_web
+docker service ps web_web
 curl -I http://localhost:8080/
 ```
 
-## 📖 Documentation
+That's it! The pre-built multi-arch image will be pulled from GitHub Container Registry.
 
-### Comprehensive Guides
+## 📖 Key Concepts
 
-- **[Complete Deployment Playbook](socket23_static_site_playbook.md)** - Full step-by-step guide covering:
-  - Docker Swarm setup and node management
-  - Local registry configuration
-  - Image building for ARMv7
-  - Production and canary deployments
-  - HAProxy configuration with TLS
-  - Troubleshooting common issues
+### Host-Mode Publishing
 
-- **[IPFire Firewall Configuration](socket23_static_site_playbook%20(1).md)** - Firewall rules for internet exposure:
-  - iptables rules for ports 80/443
-  - HAProxy setup on IPFire
-  - Let's Encrypt certificate management
+- **Direct port binding** on `:8080` for deterministic routing
+- Ensures traffic goes to the specific node where the service is running
 
-### Key Concepts
-
-#### Host-Mode vs Ingress Publishing
-
-- **Production (host-mode)**: Direct port binding on `:8080` for deterministic routing
-- **Canary (ingress-mode)**: Swarm routing mesh on `:8081` for testing new features
-
-#### Read-Only Containers
+### Read-Only Containers
 
 All containers run with `read_only: true` and use tmpfs mounts for directories that need write access:
 
@@ -143,12 +110,6 @@ volumes:
     target: /var/log/nginx
 ```
 
-#### Canary Deployments
-
-Access canary version via `/canary` path:
-- Production: `https://socket23.com/` → `:8080`
-- Canary: `https://socket23.com/canary/` → `:8081`
-
 ## 🛠️ Common Operations
 
 ### Update Website Content
@@ -157,26 +118,27 @@ Access canary version via `/canary` path:
 # Edit files in static-site/site/
 cd static-site
 make build push
-docker service update --image localhost:5000/simple-arm7-web:latest simple-web-stack_web
+docker service update --image ghcr.io/socket23/static-site:latest web_web
 ```
 
 ### View Logs
 
 ```bash
-docker service logs -f simple-web-stack_web
+docker service logs -f web_web
 ```
 
 ### Scale Service
 
 ```bash
-# Note: Only works with ingress mode, not host mode
-docker service scale web-canary_web=3
+# Note: Scaling not recommended with host mode (port conflicts)
+# Use ingress mode for multi-replica deployments
+docker service scale web_web=1
 ```
 
 ### Health Check
 
 ```bash
-docker service ps simple-web-stack_web
+docker service ps web_web
 curl -I http://localhost:8080/
 ```
 
@@ -210,10 +172,11 @@ iptables -C INPUT -i red0 -p tcp --dport 443 -j ACCEPT
 
 ### Image Pull Failures
 
-**Solution**: Use `--resolve-image=never` to prevent digest resolution issues:
+**Solution**: Ensure you have access to the GitHub Container Registry. For private images, authenticate with:
 
 ```bash
-docker stack deploy --with-registry-auth --resolve-image=never -c stack.yaml simple-web-stack
+echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin
+docker stack deploy -c stack.yaml web
 ```
 
 ## 📊 Monitoring
@@ -222,7 +185,7 @@ docker stack deploy --with-registry-auth --resolve-image=never -c stack.yaml sim
 
 ```bash
 docker service ls
-docker service ps simple-web-stack_web --no-trunc
+docker service ps web_web --no-trunc
 ```
 
 ### Resource Usage
@@ -240,12 +203,15 @@ http://firewall-ip:8404/stats
 
 ## 🔄 Deployment Strategy
 
-1. **Development**: Test locally with `docker-compose up`
+1. **Clone**: Clone the repository
+2. **Deploy**: Run `docker stack deploy -c stack.yaml web`
+3. **Verify**: Check service health and logs
+
+For custom builds:
+1. **Edit**: Modify files in `static-site/site/`
 2. **Build**: Create multi-arch image with `make build`
-3. **Push**: Upload to local registry with `make push`
-4. **Canary**: Deploy to `:8081` and test via `/canary` path
-5. **Production**: Update production stack on `:8080`
-6. **Verify**: Check health and logs
+3. **Push**: Upload to GitHub Container Registry with `make push`
+4. **Update**: Run `docker service update --image ghcr.io/socket23/static-site:latest web_web`
 
 ## 📝 License
 

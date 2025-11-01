@@ -1,6 +1,6 @@
-REG ?= registry.local:5000
+REG ?= ghcr.io/socket23
 NAME ?= static-site
-TAG ?= $(shell date +%Y.%m.%d)
+TAG ?= latest
 IMG := $(REG)/$(NAME):$(TAG)
 PLAT := linux/amd64,linux/arm64,linux/arm/v7
 

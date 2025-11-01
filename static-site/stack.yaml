@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   web:
-    image: localhost:5000/simple-arm7-web:2025-10-29
+    image: ghcr.io/socket23/static-site:latest
 
     ports:
       - target: 8080
@@ -11,10 +11,6 @@ services:
 
     read_only: true
     volumes:
-      - type: bind
-        source: /home/analyst/website/site
-        target: /usr/share/nginx/html
-        read_only: true
       - type: tmpfs
         target: /tmp
       - type: tmpfs
