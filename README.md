@@ -41,21 +41,17 @@ Odroid (Docker Swarm Manager)
 ```
 .
 ├── README.md                                    # This file
-├── socket23_static_site_playbook.md            # Complete deployment guide
-├── socket23_static_site_playbook (1).md        # IPFire firewall configuration
-└── static-site-v2/
-    └── static-site/
-        ├── Dockerfile                           # Multi-arch NGINX image
-        ├── Makefile                             # Build automation
-        ├── nginx.conf                           # NGINX configuration
-        ├── compose.yaml                         # Docker Compose (dev)
-        ├── stack.yaml                           # Docker Stack (production)
-        ├── site/                                # Static website content
-        │   ├── index.html
-        │   ├── 404.html
-        │   ├── styles.css
-        │   └── scripts.js
-        └── .dockerignore
+└── static-site/
+    ├── Dockerfile                               # ARMv7 NGINX image
+    ├── Makefile                                 # Build automation
+    ├── nginx.conf                               # NGINX configuration
+    ├── compose.yaml                             # Docker Compose (dev)
+    ├── stack.yaml                               # Docker Stack (production)
+    └── site/                                    # Static website content
+        ├── index.html
+        ├── 404.html
+        ├── styles.css
+        └── scripts.js
 ```
 
 ## 🚀 Quick Start
