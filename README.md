@@ -43,19 +43,17 @@ Odroid (Docker Swarm Manager)
 ```
 .
 ├── README.md                                    # This file
-└── static-site-v2/
-    └── static-site/
-        ├── Dockerfile                           # ARMv7 NGINX image
-        ├── Makefile                             # Build automation
-        ├── nginx.conf                           # NGINX configuration
-        ├── compose.yaml                         # Docker Compose (dev)
-        ├── stack.yaml                           # Docker Stack (production)
-        ├── site/                                # Static website content
-        │   ├── index.html
-        │   ├── 404.html
-        │   ├── styles.css
-        │   └── scripts.js
-        └── .dockerignore
+└── static-site/
+    ├── Dockerfile                               # ARMv7 NGINX image
+    ├── Makefile                                 # Build automation
+    ├── nginx.conf                               # NGINX configuration
+    ├── compose.yaml                             # Docker Compose (dev)
+    ├── stack.yaml                               # Docker Stack (production)
+    └── site/                                    # Static website content
+        ├── index.html
+        ├── 404.html
+        ├── styles.css
+        └── scripts.js
 ```
 
 ## 🚀 Quick Start
@@ -87,7 +85,7 @@ docker service create --name registry \
 ### 3. Build and Push Image
 
 ```bash
-cd static-site-v2/static-site
+cd static-site
 make build
 make push
 ```
@@ -156,8 +154,8 @@ Access canary version via `/canary` path:
 ### Update Website Content
 
 ```bash
-# Edit files in static-site-v2/static-site/site/
-cd static-site-v2/static-site
+# Edit files in static-site/site/
+cd static-site
 make build push
 docker service update --image localhost:5000/simple-arm7-web:latest simple-web-stack_web
 ```
