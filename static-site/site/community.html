@@ -1,167 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAD Team | Socket23</title>
-  <meta name="description" content="Meet the RAD (Research and Development) Team at Socket23. Driving innovation and excellence in security research and development.">
-  <meta name="keywords" content="RAD team, research and development, security research, innovation, technology development, Socket23">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dusty Angels - Community Initiative | Socket23</title>
+  <meta name="description" content="Dusty Angels: Socket23's community initiative for pro-bono and sliding-scale penetration testing, helping secure home labs, self-hosted environments, and non-profits.">
+  <meta name="keywords" content="red team, penetration testing, security assessment, community security, home lab security, non-profit security">
+  <meta property="og:title" content="Dusty Angels - Community Initiative | Socket23">
+  <meta property="og:description" content="Building a more secure internet through community-focused security assessments">
+  <meta property="og:type" content="website">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300D1B2'/><text x='50' y='58' font-size='42' text-anchor='middle' fill='white'>S</text></svg>">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/scripts.js" defer></script>
 </head>
 <body>
-  <header>
-    <nav class="container">
-      <a href="/" class="logo">Socket23</a>
-      <ul class="nav-links">
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/services.html">Services</a></li>
-        <li><a href="/projects.html">Projects</a></li>
-        <li><a href="/testimonials.html">Testimonials</a></li>
-        <li><a href="/blog.html">Blog</a></li>
-        <li><a href="/community.html" class="active">Community</a></li>
-        <li><a href="/collaboration.html">Engineer Collaboration</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-      </ul>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">Socket23</a>
+      <nav id="menu" class="menu" data-state="closed">
+        <a href="/">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/testimonials.html">Testimonials</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/community.html">Community</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="menu">☰</button>
+    </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container" style="text-align:center">
-        <h1>� RAD Team</h1>
-        <p class="tagline" style="font-size:20px;margin-top:16px;max-width:800px;margin-left:auto;margin-right:auto">Socket23's Research and Development Team: Pushing the Boundaries of Security Innovation</p>
-      </div>
-    </section>
-
-    <section class="panel">
       <div class="container">
-        <h2>Our Vision</h2>
-        <p style="text-align:center;margin-bottom:32px;max-width:900px;margin-left:auto;margin-right:auto;font-size:18px">The RAD team drives innovation and excellence in security research, developing cutting-edge solutions and advancing the field of cybersecurity.</p>
-
-        <div style="max-width:800px;margin:0 auto">
-          <p style="margin-bottom:16px">The <strong>Research and Development (RAD)</strong> team focuses on:</p>
-          <ul style="margin:16px 0;padding-left:20px;line-height:1.8">
-            <li>🔬 <strong>Advanced Security Research</strong> to discover new attack vectors and defense mechanisms</li>
-            <li>🛠️ <strong>Tool Development</strong> for enhanced security testing and automation</li>
-            <li>🧪 <strong>Innovative Solutions</strong> for complex security challenges</li>
-            <li>� <strong>Performance Optimization</strong> of security systems and processes</li>
-            <li>🔄 <strong>Continuous Improvement</strong> through research-driven insights</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel alt">
-      <div class="container">
-        <h2>What We Do</h2>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:32px">
-          <article class="card">
-            <h3>� Research</h3>
-            <p>Conducting cutting-edge research in cybersecurity, exploring new attack vectors, and developing innovative defense strategies. Our team stays at the forefront of security technology.</p>
-          </article>
-
-          <article class="card">
-            <h3>🛠️ Development</h3>
-            <p>Creating robust security tools and automation solutions that enhance our testing capabilities and improve the efficiency of our security assessments.</p>
-          </article>
-
-          <article class="card">
-            <h3>🧪 Innovation</h3>
-            <p>Pioneering new approaches to security challenges and developing novel solutions that push the boundaries of what's possible in cybersecurity.</p>
-          </article>
-
-          <article class="card">
-            <h3>📈 Optimization</h3>
-            <p>Continuously improving our methodologies and tools to deliver more effective and efficient security solutions for our clients.</p>
-          </article>
-
-          <article class="card">
-            <h3>🔄 Integration</h3>
-            <p>Seamlessly incorporating research findings and new technologies into our service offerings to provide cutting-edge security solutions.</p>
-          </article>
-
-          <article class="card">
-            <h3>� Knowledge Transfer</h3>
-            <p>Sharing insights and expertise within the team to foster growth and maintain our position as security innovation leaders.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel">
-      <div class="container">
-        <h2>Current Focus Areas</h2>
-
-        <div style="max-width:800px;margin:0 auto">
-          <article class="card" style="margin-bottom:24px">
-            <h3>🔒 Advanced Threat Detection</h3>
-            <p>Researching and developing new methodologies for identifying and analyzing emerging security threats.</p>
-          </article>
-
-          <article class="card" style="margin-bottom:24px">
-            <h3>🤖 AI-Powered Security</h3>
-            <p>Exploring applications of artificial intelligence and machine learning in security testing and threat detection.</p>
-          </article>
-
-          <article class="card" style="margin-bottom:24px">
-            <h3>⚡ Performance Optimization</h3>
-            <p>Enhancing the speed and efficiency of our security testing tools and methodologies.</p>
-          </article>
-
-          <article class="card" style="margin-bottom:24px">
-            <h3>🔍 Zero-Day Research</h3>
-            <p>Conducting in-depth research to discover and responsibly disclose new security vulnerabilities.</p>
-          </article>
-
-          <article class="card" style="margin-bottom:24px">
-            <h3>�️ Tool Development</h3>
-            <p>Building next-generation security testing and automation tools for enhanced capabilities.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel alt">
-      <div class="container" style="text-align:center">
-        <h2>Join Our Innovation Journey</h2>
-        <p style="margin:24px auto;max-width:700px;font-size:18px">Interested in collaborating with our RAD team on security research and development? We're always open to partnerships that push the boundaries of cybersecurity.</p>
+        <h1>🛡️ Dusty Angels</h1>
+        <p class="tagline">Building a More Secure Internet, Together</p>
         
-        <div style="margin-top:32px">
-          <a href="/contact.html" class="btn" style="display:inline-block;padding:16px 32px;background:var(--accent);color:white;text-decoration:none;border-radius:4px;font-weight:600;margin:8px">Contact the RAD Team</a>
-        </div>
-
-        <p style="margin-top:32px;font-size:14px;color:var(--sub);max-width:600px;margin-left:auto;margin-right:auto">
-          <strong>Note:</strong> Our team is dedicated to advancing the field of cybersecurity through innovative research and development. Let's explore how we can work together to create more secure solutions.
+        <p style="font-size:18px;margin-top:20px;line-height:1.6">
+          We're giving back to the community by helping secure home labs, self-hosted environments, and non-profits through pro-bono and sliding-scale security assessments.
         </p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="container">
+        <h2>Our Mission</h2>
+        <p style="font-size:18px;margin-bottom:32px;line-height:1.7">
+          We want to earn your trust, build community goodwill, and do our part to increase the security of the Internet—and the admins who run it.
+        </p>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>🏠 Pro-Bono Services</h3>
+            <p>Free security assessments for home labs, self-hosted environments, and qualified non-profits, with public disclosure after remediation.</p>
+          </article>
+          <article class="card">
+            <h3>🎓 Training Focus</h3>
+            <p>Training new Red Team professionals while building comprehensive security training content and automation tools.</p>
+          </article>
+          <article class="card">
+            <h3>🤝 Community Trust</h3>
+            <p>Demonstrating our expertise through transparent, high-quality security assessments and public reporting.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel alt">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="grid-2">
+          <article class="card">
+            <h3>The Assessment</h3>
+            <ul>
+              <li>Full security evaluation of your environment</li>
+              <li>Detailed vulnerability analysis</li>
+              <li>Clear remediation roadmap</li>
+              <li>One free re-assessment included</li>
+              <li>Professional security guidance</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Pricing Tiers</h3>
+            <ul>
+              <li>Pro-Bono: Free with public disclosure</li>
+              <li>Anonymized: Discounted rate, redacted public report</li>
+              <li>Private: Confidential assessment, sliding scale</li>
+              <li>Pricing based on scope and requirements</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="container">
+        <h2>Our Commitment</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>🎯 Clear Goals</h3>
+            <p>We're here to genuinely improve security, not just check boxes. Each assessment aims for real, lasting improvements.</p>
+          </article>
+          <article class="card">
+            <h3>📈 Continuous Growth</h3>
+            <p>Every engagement helps train the next generation of security professionals while raising the internet's security bar.</p>
+          </article>
+          <article class="card">
+            <h3>💪 Real Impact</h3>
+            <p>Making the internet more secure one assessment at a time, helping admins become better defenders.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="panel alt">
+      <div class="container" style="text-align:center">
+        <h2>Ready to Improve Your Security?</h2>
+        <p style="font-size:18px;margin:24px auto;max-width:700px">
+          Whether you're running a home lab, self-hosting services, or managing a non-profit's infrastructure, we're here to help make your environment more secure.
+        </p>
+        <div class="actions" style="justify-content:center;margin-top:24px">
+          <a class="btn primary" href="/contact.html">Apply for Assessment</a>
+          <a class="btn ghost" href="/services.html">View Services</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Socket23. Simple. Fast. Secure.</p>
-      <p style="margin-top:8px">
-        <a href="mailto:j.miller108@saints.mhcc.edu" style="color:var(--sub);text-decoration:none;margin:0 8px">j.miller108@saints.mhcc.edu</a> | 
-        <a href="tel:+17144881923" style="color:var(--sub);text-decoration:none;margin:0 8px">(714) 488-1923</a>
-      </p>
-      <p style="margin-top:16px">
-        <a href="https://github.com/socket23" target="_blank" rel="noopener noreferrer" style="color:var(--sub);text-decoration:none;margin:0 8px">GitHub</a> | 
-        <a href="https://linkedin.com/in/socket23" target="_blank" rel="noopener noreferrer" style="color:var(--sub);text-decoration:none;margin:0 8px">LinkedIn</a> | 
-        <a href="/collaboration.html" style="color:var(--sub);text-decoration:none;margin:0 8px">Engineer Collaboration</a>
+      <p>© <span id="year"></span> Socket23. All rights reserved. | Sandy, Oregon</p>
+      <p style="margin-top:12px">
+        <a href="https://github.com/socket23" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;margin-right:16px">GitHub</a>
+        <a href="https://www.linkedin.com/in/joseph-miller-cybersecurity" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;margin-right:16px">LinkedIn</a>
+        <a href="/collaboration.html" style="color:var(--accent);text-decoration:none">Engineer Collaboration</a>
       </p>
       <p style="margin-top:16px;font-size:12px;color:var(--sub)">
         Built with <a href="https://www.augmentcode.com/" target="_blank" rel="noopener noreferrer" style="color:var(--sub);text-decoration:none;border-bottom:1px dotted var(--sub)">Augment</a>
       </p>
     </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
-
