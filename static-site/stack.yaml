@@ -36,9 +36,9 @@ services:
 
     deploy:
       mode: replicated
-      replicas: 3
+      replicas: 1
       restart_policy: { condition: on-failure }
       update_config:
-        order: start-first
+        order: stop-first
         parallelism: 1
         delay: 5s
