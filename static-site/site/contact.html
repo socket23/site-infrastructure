@@ -80,10 +80,8 @@
 
             <div class="card">
               <form action="https://formspree.io/f/movpyavr" method="POST" id="contactForm">
-                <!-- Formspree Configuration -->
-                <input type="hidden" name="_subject" value="New contact from Socket23.com">
-                <input type="text" name="_gotcha" style="display:none">
-                <input type="hidden" name="_next" value="https://socket23.com/contact.html?success=true">
+                <!-- Honeypot spam protection (Formspree) -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
                 <div style="margin-bottom:16px">
                   <label for="name" style="display:block;margin-bottom:6px;color:var(--text)">Name *</label>
@@ -97,7 +95,7 @@
                 </div>
 
                 <div style="margin-bottom:16px">
-                  <label for="email" style="display:block;margin-bottom:6px;color:var(--text)">Email *</label>
+                  <label for="email" style="display:block;margin-bottom:6px;color:var(--text)">Your Email *</label>
                   <input
                     type="email"
                     id="email"
@@ -119,7 +117,7 @@
                 </div>
 
                 <div style="margin-bottom:16px">
-                  <label for="message" style="display:block;margin-bottom:6px;color:var(--text)">Message *</label>
+                  <label for="message" style="display:block;margin-bottom:6px;color:var(--text)">Your Message *</label>
                   <textarea
                     id="message"
                     name="message"
