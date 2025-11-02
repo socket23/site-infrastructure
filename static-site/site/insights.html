@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Insights & Resources — Socket23</title>
+  <meta name="description" content="Cybersecurity insights, threat intelligence, and technical resources from Socket23." />
+  <meta property="og:title" content="Insights & Resources — Socket23" />
+  <meta property="og:description" content="Expert perspectives on cybersecurity, compliance, and emerging threats." />
+  <meta property="og:type" content="website" />
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300D1B2'/><text x='50' y='58' font-size='42' text-anchor='middle' fill='white'>S</text></svg>">
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/scripts.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">Socket23</a>
+      <nav id="menu" class="menu" data-state="closed">
+        <a href="/">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Insights & Resources</h1>
+        <p>Threat intelligence, security best practices, and technical deep-dives</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="container">
+        <h2>Featured Insights</h2>
+        
+        <article class="card" style="margin-bottom:24px">
+          <h3>🤖 Leveraging AI for Threat Hunting: Lessons from ThreatGuard</h3>
+          <p style="color:var(--sub);margin-bottom:12px">Published: January 2025 | Category: AI/ML Security</p>
+          <p>Building ThreatGuard, a custom GPT for analyzing DShield honeypot data, revealed powerful insights about AI-assisted security operations. Here's what I learned about combining human expertise with AI capabilities for effective threat hunting.</p>
+          <p style="margin-top:12px"><strong>Key Takeaways:</strong></p>
+          <ul style="margin:12px 0;padding-left:20px">
+            <li>AI excels at pattern recognition across large datasets but requires human context for accurate threat assessment</li>
+            <li>Structured output templates (like Attack Observation Template v3.0) dramatically improve AI consistency</li>
+            <li>Integration with SIEM platforms enables real-time threat correlation and enrichment</li>
+            <li>Local LLM deployment is viable for sensitive environments with proper GPU acceleration</li>
+            <li>Model Context Protocol (MCP) enables standardized AI-to-tool integration</li>
+          </ul>
+          <p style="margin-top:16px">
+            <a href="https://chatgpt.com/g/g-Ol5k3VALX-threatguard" target="_blank" rel="noopener noreferrer" class="btn ghost" style="display:inline-block">
+              Try ThreatGuard GPT →
+            </a>
+          </p>
+        </article>
+
+        <article class="card" style="margin-bottom:24px">
+          <h3>🔐 IRS Publication 4557: What Tax Professionals Need to Know in 2025</h3>
+          <p style="color:var(--sub);margin-bottom:12px">Published: December 2024 | Category: Compliance</p>
+          <p>With tax season approaching, CPA firms and tax preparers must ensure compliance with IRS Publication 4557 security requirements. This guide covers the essential controls and common pitfalls.</p>
+          <p style="margin-top:12px"><strong>Essential Requirements:</strong></p>
+          <ul style="margin:12px 0;padding-left:20px">
+            <li><strong>Written Security Plan:</strong> Document your security policies and procedures</li>
+            <li><strong>Encryption:</strong> Protect tax data at rest and in transit</li>
+            <li><strong>Access Controls:</strong> Implement MFA and principle of least privilege</li>
+            <li><strong>Employee Training:</strong> Annual security awareness training for all staff</li>
+            <li><strong>Incident Response:</strong> Plan for data breach notification and response</li>
+            <li><strong>Vendor Management:</strong> Ensure third-party compliance (e.g., cloud storage, tax software)</li>
+          </ul>
+          <p style="margin-top:12px"><strong>Common Mistakes:</strong></p>
+          <ul style="margin:12px 0;padding-left:20px">
+            <li>❌ Storing unencrypted tax returns on local drives or email</li>
+            <li>❌ Sharing passwords or using weak authentication</li>
+            <li>❌ Failing to update security plan annually</li>
+            <li>❌ Not vetting cloud service providers for security compliance</li>
+          </ul>
+          <p style="margin-top:16px">
+            <a href="/services.html#compliance" class="btn ghost" style="display:inline-block">
+              IRS 4557 Compliance Services →
+            </a>
+          </p>
+        </article>
+
+        <article class="card" style="margin-bottom:24px">
+          <h3>☁️ Cloud Security Automation: Beyond Manual Configuration Reviews</h3>
+          <p style="color:var(--sub);margin-bottom:12px">Published: November 2024 | Category: Cloud Security</p>
+          <p>Manual cloud security reviews don't scale. Here's how to implement automated security controls and compliance monitoring in AWS and Azure using infrastructure-as-code and policy-as-code approaches.</p>
+          <p style="margin-top:12px"><strong>Automation Strategies:</strong></p>
+          <ul style="margin:12px 0;padding-left:20px">
+            <li><strong>Infrastructure-as-Code Security:</strong> Scan Terraform/CloudFormation for misconfigurations before deployment</li>
+            <li><strong>Policy-as-Code:</strong> Use AWS Config Rules, Azure Policy, or OPA for continuous compliance</li>
+            <li><strong>Automated Remediation:</strong> Lambda/Azure Functions to auto-fix common security issues</li>
+            <li><strong>Security Baselines:</strong> CIS Benchmarks automated with AWS Security Hub or Azure Security Center</li>
+            <li><strong>Cost Optimization:</strong> Security automation often reduces cloud costs by 15-30%</li>
+          </ul>
+          <p style="margin-top:12px"><strong>Tools & Frameworks:</strong></p>
+          <ul style="margin:12px 0;padding-left:20px">
+            <li>Checkov, tfsec, Terrascan for IaC scanning</li>
+            <li>AWS Config, Azure Policy for runtime compliance</li>
+            <li>ScoutSuite, Prowler for multi-cloud security assessment</li>
+            <li>Open Policy Agent (OPA) for custom policy enforcement</li>
+          </ul>
+        </article>
+
+        <article class="card" style="margin-bottom:24px">
+          <h3>🚨 Incident Response: The First 60 Minutes Matter Most</h3>
+          <p style="color:var(--sub);margin-bottom:12px">Published: October 2024 | Category: Incident Response</p>
+          <p>Based on real-world incident response engagements, here's what to do in the critical first hour of a security incident to minimize damage and preserve evidence.</p>
+          <p style="margin-top:12px"><strong>The First 60 Minutes Checklist:</strong></p>
+          <ul style="margin:12px 0;padding-left:20px">
+            <li><strong>0-10 min:</strong> Activate incident response team, establish communication channel</li>
+            <li><strong>10-20 min:</strong> Initial triage - identify affected systems, scope of compromise</li>
+            <li><strong>20-30 min:</strong> Containment decisions - isolate vs. monitor, preserve evidence</li>
+            <li><strong>30-45 min:</strong> Evidence collection - memory dumps, disk images, network captures</li>
+            <li><strong>45-60 min:</strong> Stakeholder notification - legal, insurance, management</li>
+          </ul>
+          <p style="margin-top:12px"><strong>Critical Mistakes to Avoid:</strong></p>
+          <ul style="margin:12px 0;padding-left:20px">
+            <li>❌ Shutting down systems before collecting volatile memory</li>
+            <li>❌ Alerting attackers by changing passwords or blocking IPs prematurely</li>
+            <li>❌ Failing to preserve logs and evidence</li>
+            <li>❌ Not engaging legal counsel early (especially for ransomware)</li>
+          </ul>
+          <p style="margin-top:16px">
+            <a href="/services.html#incident-response" class="btn ghost" style="display:inline-block">
+              Incident Response Services →
+            </a>
+          </p>
+        </article>
+
+        <article class="card" style="margin-bottom:24px">
+          <h3>🔍 SIEM Detection Engineering: Writing Rules That Actually Work</h3>
+          <p style="color:var(--sub);margin-bottom:12px">Published: September 2024 | Category: Threat Detection</p>
+          <p>From my experience with SANS Internet Storm Center and enterprise SIEM deployments, here's how to write detection rules that catch real threats without drowning your SOC in false positives.</p>
+          <p style="margin-top:12px"><strong>Detection Rule Best Practices:</strong></p>
+          <ul style="margin:12px 0;padding-left:20px">
+            <li><strong>Start with MITRE ATT&CK:</strong> Map detections to specific tactics and techniques</li>
+            <li><strong>Tune for Your Environment:</strong> Generic rules generate noise - customize for your baseline</li>
+            <li><strong>Use Threat Intelligence:</strong> Enrich with IOCs from trusted sources</li>
+            <li><strong>Test Before Deploying:</strong> Run rules against historical data to measure false positive rate</li>
+            <li><strong>Document Everything:</strong> Future you will thank present you</li>
+          </ul>
+          <p style="margin-top:12px"><strong>Common Detection Gaps:</strong></p>
+          <ul style="margin:12px 0;padding-left:20px">
+            <li>Living-off-the-land techniques (PowerShell, WMI, legitimate admin tools)</li>
+            <li>Cloud API abuse (AWS/Azure credential misuse)</li>
+            <li>Lateral movement via legitimate protocols (RDP, SMB, WinRM)</li>
+            <li>Data exfiltration via approved channels (cloud storage, email)</li>
+          </ul>
+          <p style="margin-top:16px">
+            <a href="/services.html#siem" class="btn ghost" style="display:inline-block">
+              SIEM Monitoring Services →
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel alt">
+      <div class="container">
+        <h2>Threat Intelligence Resources</h2>
+        
+        <div class="grid-2">
+          <article class="card">
+            <h3>🛡️ SANS Internet Storm Center</h3>
+            <p>As a former Apprentice Threat Handler, I contributed to the SANS ISC mission of providing free cybersecurity threat analysis to the community.</p>
+            <p style="margin-top:12px">
+              <a href="https://isc.sans.edu/" target="_blank" rel="noopener noreferrer" class="btn ghost" style="display:inline-block">
+                Visit SANS ISC →
+              </a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>🎯 ThreatGuard Custom GPT</h3>
+            <p>My custom GPT for threat hunting analyzes DShield honeypot data and generates detailed threat reports following standardized templates.</p>
+            <p style="margin-top:12px">
+              <a href="https://chatgpt.com/g/g-Ol5k3VALX-threatguard" target="_blank" rel="noopener noreferrer" class="btn ghost" style="display:inline-block">
+                Try ThreatGuard →
+              </a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>📊 MITRE ATT&CK Framework</h3>
+            <p>Essential resource for threat modeling, detection engineering, and understanding adversary tactics and techniques.</p>
+            <p style="margin-top:12px">
+              <a href="https://attack.mitre.org/" target="_blank" rel="noopener noreferrer" class="btn ghost" style="display:inline-block">
+                Explore ATT&CK →
+              </a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>🔐 NIST Cybersecurity Framework</h3>
+            <p>Comprehensive framework for managing cybersecurity risk, widely adopted across industries and compliance standards.</p>
+            <p style="margin-top:12px">
+              <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer" class="btn ghost" style="display:inline-block">
+                NIST CSF →
+              </a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="container">
+        <h2>Security Tools & Technologies</h2>
+        
+        <div class="grid-3">
+          <article class="card">
+            <h3>SIEM & Monitoring</h3>
+            <ul style="margin:12px 0;padding-left:20px">
+              <li>Elastic Stack (ELK)</li>
+              <li>Splunk</li>
+              <li>Security Onion</li>
+              <li>Wazuh</li>
+              <li>Zeek (Bro)</li>
+              <li>Suricata</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Penetration Testing</h3>
+            <ul style="margin:12px 0;padding-left:20px">
+              <li>Kali Linux</li>
+              <li>Metasploit</li>
+              <li>Burp Suite</li>
+              <li>OWASP ZAP</li>
+              <li>Nmap</li>
+              <li>Wireshark</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Cloud Security</h3>
+            <ul style="margin:12px 0;padding-left:20px">
+              <li>AWS Security Hub</li>
+              <li>Azure Security Center</li>
+              <li>Terraform / IaC</li>
+              <li>Checkov</li>
+              <li>ScoutSuite</li>
+              <li>Prowler</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Forensics & IR</h3>
+            <ul style="margin:12px 0;padding-left:20px">
+              <li>Volatility</li>
+              <li>Autopsy</li>
+              <li>FTK Imager</li>
+              <li>CAPEv2 (Malware Analysis)</li>
+              <li>SIFT Workstation</li>
+              <li>Velociraptor</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Automation & Scripting</h3>
+            <ul style="margin:12px 0;padding-left:20px">
+              <li>Python</li>
+              <li>Bash</li>
+              <li>PowerShell</li>
+              <li>Ansible</li>
+              <li>Docker</li>
+              <li>GitHub Actions</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>AI/ML Security</h3>
+            <ul style="margin:12px 0;padding-left:20px">
+              <li>Custom GPTs</li>
+              <li>Model Context Protocol</li>
+              <li>Ollama</li>
+              <li>LM Studio</li>
+              <li>Open-WebUI</li>
+              <li>Langchain</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel alt">
+      <div class="container" style="text-align:center">
+        <h2>Stay Updated</h2>
+        <p style="max-width:700px;margin:0 auto 24px">Interested in discussing threat intelligence, security challenges, or emerging technologies? Let's connect.</p>
+        <div class="actions" style="justify-content:center;margin-top:24px">
+          <a class="btn primary" href="/contact.html">Get in Touch</a>
+          <a class="btn ghost" href="/projects.html">View Projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Socket23. All rights reserved. | Sandy, Oregon</p>
+    </div>
+  </footer>
+</body>
+</html>
+

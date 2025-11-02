@@ -18,9 +18,12 @@
     <div class="container nav-inner">
       <a class="brand" href="/">Socket23</a>
       <nav id="menu" class="menu" data-state="closed">
-        <a href="/">Services</a>
+        <a href="/">Home</a>
+        <a href="/services.html">Services</a>
         <a href="/about.html">About</a>
         <a href="/projects.html">Projects</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/insights.html">Insights</a>
         <a href="/contact.html">Contact</a>
       </nav>
       <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="menu">☰</button>
@@ -152,13 +155,34 @@
     <section class="panel">
       <div class="container">
         <h2>Open Source Contributions</h2>
-        <div class="card">
-          <p>I believe in contributing back to the open-source community that has enabled so much of modern infrastructure. My repositories showcase practical implementations of security and infrastructure concepts.</p>
-          <p style="margin-top:16px">
-            <a href="https://github.com/socket23?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn ghost" style="display:inline-block">
-              View GitHub Profile →
-            </a>
-          </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>GitHub Activity</h3>
+            <p>I believe in contributing back to the open-source community that has enabled so much of modern infrastructure. My repositories showcase practical implementations of security and infrastructure concepts.</p>
+            <p style="margin-top:16px">
+              <a href="https://github.com/socket23?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn ghost" style="display:inline-block">
+                View GitHub Profile →
+              </a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Featured Repositories</h3>
+            <ul style="margin:12px 0;padding-left:20px">
+              <li><strong>site-infrastructure</strong> - Hardened Docker Swarm deployment with security-first design</li>
+              <li><strong>Security automation scripts</strong> - Python tools for security operations</li>
+              <li><strong>MCP server implementations</strong> - Model Context Protocol integrations</li>
+              <li><strong>SIEM detection rules</strong> - Custom detection content for ELK/Splunk</li>
+            </ul>
+            <p style="margin-top:16px;font-size:13px;color:var(--sub)">
+              ⭐ Star repositories you find useful | 🍴 Fork and contribute
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top:32px;text-align:center">
+          <img src="https://github-readme-stats.vercel.app/api?username=socket23&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=00d1b2&icon_color=00d1b2&text_color=c9d1d9" alt="GitHub Stats" style="max-width:100%;height:auto;border-radius:8px">
         </div>
       </div>
     </section>
@@ -178,6 +202,10 @@
   <footer class="footer">
     <div class="container">
       <p>© <span id="year"></span> Socket23. All rights reserved. | Sandy, Oregon</p>
+      <p style="margin-top:12px">
+        <a href="https://github.com/socket23" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;margin-right:16px">GitHub</a>
+        <a href="https://www.linkedin.com/in/joseph-miller-cybersecurity" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none">LinkedIn</a>
+      </p>
     </div>
   </footer>
 </body>
