@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Socket23 — Fast, Secure, Simple</title>
-  <meta name="description" content="A lightweight, secure static site running on hardened Docker & unprivileged Nginx." />
-  <meta property="og:title" content="Socket23 — Fast, Secure, Simple" />
-  <meta property="og:description" content="Hardened static site on Docker & Nginx (unprivileged)." />
+  <title>Socket23 — Cybersecurity & IT Services</title>
+  <meta name="description" content="Professional cybersecurity and IT infrastructure services. Security assessments, penetration testing, Docker deployment, and system hardening." />
+  <meta property="og:title" content="Socket23 — Cybersecurity & IT Services" />
+  <meta property="og:description" content="Security Engineer & Systems Administrator offering cybersecurity and IT infrastructure services." />
   <meta property="og:type" content="website" />
   <meta name="color-scheme" content="dark light">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300D1B2'/><text x='50' y='58' font-size='42' text-anchor='middle' fill='white'>S</text></svg>">
@@ -18,10 +18,10 @@
     <div class="container nav-inner">
       <a class="brand" href="/">Socket23</a>
       <nav id="menu" class="menu" data-state="closed">
-        <a href="#features">Features</a>
-        <a href="#security">Security</a>
-        <a href="#deploy">Deploy</a>
-        <a href="#contact">Contact</a>
+        <a href="/">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/contact.html">Contact</a>
       </nav>
       <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="menu">☰</button>
     </div>
@@ -30,76 +30,121 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Welcome Sysadmins, time to plug into Socket23! here to help your security configuration goals.</h1>
-        <p>Static site. Unprivileged Nginx. Docker hardened. Multi‑arch images that run anywhere.</p>
+        <h1>Cybersecurity & IT Infrastructure Services</h1>
+        <p class="tagline">Simple. Fast. Secure.</p>
+        <p>Professional security engineering and systems administration with 20+ years of technology experience.</p>
         <div class="actions">
-          <a class="btn primary" href="#deploy">Deploy in minutes</a>
-          <a class="btn ghost" href="#security">See hardening</a>
+          <a class="btn primary" href="/contact.html">Get in Touch</a>
+          <a class="btn ghost" href="#services">View Services</a>
         </div>
       </div>
     </section>
 
-    <section id="features" class="panel">
-      <div class="container grid-3">
-        <article class="card">
-          <h3>Zero Runtime Code</h3>
-          <p>Pure static assets with long‑lived caching and a strict Content‑Security‑Policy.</p>
-        </article>
-        <article class="card">
-          <h3>Non‑root by Design</h3>
-          <p>Unprivileged Nginx on port 8080, read‑only FS, tmpfs for runtime dirs, caps dropped.</p>
-        </article>
-        <article class="card">
-          <h3>Multi‑Arch Images</h3>
-          <p>Buildx targets <code>amd64</code>, <code>arm64</code>, and <code>armv7</code> for Odroid/RPi clusters.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="security" class="panel alt">
-      <div class="container grid-2">
-        <article class="card">
-          <h3>Defense‑in‑Depth</h3>
-          <ul>
-            <li>Content‑Security‑Policy + strict headers</li>
-            <li>Read‑only container FS</li>
-            <li>Drop <code>ALL</code> Linux capabilities</li>
-            <li>No shell or extra packages in final image</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Operational Safety</h3>
-          <ul>
-            <li>Healthchecks and start‑first updates</li>
-            <li>Immutable cache for assets</li>
-            <li>Minimal surface area</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="deploy" class="panel">
+    <section id="services" class="panel">
       <div class="container">
-        <h2>Deploy</h2>
-        <ol class="steps">
-          <li>Build & push a multi‑arch image with <code>Make release</code>.</li>
-          <li><code>docker stack deploy -c stack.yaml web</code></li>
-          <li>Place behind your reverse proxy/TLS if desired.</li>
-        </ol>
+        <h2>Cybersecurity Services</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Security Assessments</h3>
+            <p>Comprehensive security audits and vulnerability assessments to identify and remediate risks in your infrastructure.</p>
+          </article>
+          <article class="card">
+            <h3>Penetration Testing</h3>
+            <p>Ethical hacking and penetration testing to discover vulnerabilities before malicious actors do.</p>
+          </article>
+          <article class="card">
+            <h3>Security Hardening</h3>
+            <p>System and application hardening following industry best practices and compliance frameworks.</p>
+          </article>
+          <article class="card">
+            <h3>Incident Response</h3>
+            <p>Rapid response to security incidents with forensic analysis and remediation strategies.</p>
+          </article>
+          <article class="card">
+            <h3>Compliance Consulting</h3>
+            <p>Guidance on meeting regulatory requirements and security compliance standards.</p>
+          </article>
+          <article class="card">
+            <h3>Security Architecture</h3>
+            <p>Design and implementation of secure infrastructure with defense-in-depth principles.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="panel alt">
+    <section id="it-services" class="panel alt">
       <div class="container">
-        <h2>Questions?</h2>
-        <p>Swap out content in <code>site/</code> and re‑deploy. It's that simple.</p>
+        <h2>IT Infrastructure Services</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Infrastructure Design</h3>
+            <p>Scalable, secure infrastructure architecture tailored to your business needs.</p>
+          </article>
+          <article class="card">
+            <h3>Docker & Containerization</h3>
+            <p>Container orchestration with Docker Swarm and Kubernetes for modern deployments.</p>
+          </article>
+          <article class="card">
+            <h3>Linux Administration</h3>
+            <p>Expert Linux system administration, configuration, and performance optimization.</p>
+          </article>
+          <article class="card">
+            <h3>Network Configuration</h3>
+            <p>Network design, firewall configuration, and secure routing solutions.</p>
+          </article>
+          <article class="card">
+            <h3>Automation & Scripting</h3>
+            <p>Infrastructure automation, CI/CD pipelines, and custom scripting solutions.</p>
+          </article>
+          <article class="card">
+            <h3>Cloud Infrastructure</h3>
+            <p>Cloud architecture and migration strategies for AWS, Azure, and hybrid environments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="panel">
+      <div class="container">
+        <h2>My Approach</h2>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Security First</h3>
+            <ul>
+              <li>Defense-in-depth security architecture</li>
+              <li>Principle of least privilege</li>
+              <li>Continuous security monitoring</li>
+              <li>Regular security assessments</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Practical Solutions</h3>
+            <ul>
+              <li>Tailored to your specific needs</li>
+              <li>Scalable and maintainable</li>
+              <li>Clear documentation</li>
+              <li>Knowledge transfer and training</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="panel alt">
+      <div class="container" style="text-align:center">
+        <h2>Ready to Secure Your Infrastructure?</h2>
+        <p>Let's discuss how I can help protect and optimize your systems.</p>
+        <div class="actions" style="justify-content:center;margin-top:24px">
+          <a class="btn primary" href="/contact.html">Contact Me</a>
+          <a class="btn ghost" href="/projects.html">View Projects</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>© <span id="year"></span> Socket23. All rights reserved.</p>
+      <p>© <span id="year"></span> Socket23. All rights reserved. | Sandy, Oregon</p>
     </div>
   </footer>
 </body>
