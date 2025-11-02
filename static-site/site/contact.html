@@ -71,55 +71,68 @@
 
           <div>
             <h2>Send a Message</h2>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="card" style="display:none;background:linear-gradient(180deg,#0d3d2f,#0a2d22);border-color:var(--accent);margin-bottom:20px">
+              <h3 style="color:var(--accent);margin-bottom:8px">✓ Message Sent!</h3>
+              <p>Thank you for reaching out. I'll get back to you within 24-48 hours.</p>
+            </div>
+
             <div class="card">
-              <form action="https://formspree.io/f/mnqeqpvg" method="POST" id="contactForm">
+              <form action="https://formsubmit.co/Millerjo4582@gmail.com" method="POST" id="contactForm">
+                <!-- Formsubmit Configuration -->
+                <input type="hidden" name="_subject" value="New contact from Socket23.com">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+                <input type="hidden" name="_next" value="https://socket23.com/contact.html?success=true">
+
                 <div style="margin-bottom:16px">
                   <label for="name" style="display:block;margin-bottom:6px;color:var(--text)">Name *</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    required 
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
                     style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px"
                   />
                 </div>
 
                 <div style="margin-bottom:16px">
                   <label for="email" style="display:block;margin-bottom:6px;color:var(--text)">Email *</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    required 
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
                     style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px"
                   />
                 </div>
 
                 <div style="margin-bottom:16px">
                   <label for="subject" style="display:block;margin-bottom:6px;color:var(--text)">Subject *</label>
-                  <input 
-                    type="text" 
-                    id="subject" 
-                    name="subject" 
-                    required 
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
                     style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px"
                   />
                 </div>
 
                 <div style="margin-bottom:16px">
                   <label for="message" style="display:block;margin-bottom:6px;color:var(--text)">Message *</label>
-                  <textarea 
-                    id="message" 
-                    name="message" 
-                    required 
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
                     rows="6"
                     style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;resize:vertical"
                   ></textarea>
                 </div>
 
-                <button 
-                  type="submit" 
-                  class="btn primary" 
+                <button
+                  type="submit"
+                  class="btn primary"
                   style="width:100%;cursor:pointer"
                 >
                   Send Message

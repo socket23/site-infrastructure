@@ -10,4 +10,17 @@
       btn.setAttribute('aria-expanded', (!open).toString());
     });
   }
+
+  // Show success message if redirected from form submission
+  const urlParams = new URLSearchParams(window.location.search);
+  if(urlParams.get('success') === 'true'){
+    const successMsg = document.getElementById('successMessage');
+    const form = document.getElementById('contactForm');
+    if(successMsg){
+      successMsg.style.display = 'block';
+      if(form) form.style.display = 'none';
+      // Scroll to success message
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
 })();
