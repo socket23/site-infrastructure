@@ -84,6 +84,9 @@
                 action="https://formspree.io/f/movpyavr"
                 method="POST"
               >
+                <!-- Honeypot spam protection - hidden field that bots will fill but humans won't see -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
                 <label style="display:block;margin-bottom:16px">
                   Your email:
                   <input type="email" name="email" style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;margin-top:6px">
