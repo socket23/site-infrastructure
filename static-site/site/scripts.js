@@ -12,8 +12,10 @@
   }
 
   // Show success message if redirected from form submission
+  // Validate URL parameter to prevent XSS
   const urlParams = new URLSearchParams(window.location.search);
-  if(urlParams.get('success') === 'true'){
+  const successParam = urlParams.get('success');
+  if(successParam === 'true'){
     const successMsg = document.getElementById('successMessage');
     const form = document.getElementById('contactForm');
     if(successMsg){
@@ -21,6 +23,11 @@
       if(form) form.style.display = 'none';
       // Scroll to success message
       successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Clean URL without reloading page
+      if(window.history && window.history.replaceState){
+        const cleanUrl = window.location.pathname;
+        window.history.replaceState({}, document.title, cleanUrl);
+      }
     }
   }
 })();
