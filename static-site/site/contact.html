@@ -79,65 +79,21 @@
             </div>
 
             <div class="card">
-              <form action="https://formspree.io/f/movpyavr" method="POST" id="contactForm">
-                <!-- Honeypot spam protection (Formspree) -->
-                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-                <div style="margin-bottom:16px">
-                  <label for="name" style="display:block;margin-bottom:6px;color:var(--text)">Name *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px"
-                  />
-                </div>
-
-                <div style="margin-bottom:16px">
-                  <label for="email" style="display:block;margin-bottom:6px;color:var(--text)">Your Email *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px"
-                  />
-                </div>
-
-                <div style="margin-bottom:16px">
-                  <label for="subject" style="display:block;margin-bottom:6px;color:var(--text)">Subject *</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px"
-                  />
-                </div>
-
-                <div style="margin-bottom:16px">
-                  <label for="message" style="display:block;margin-bottom:6px;color:var(--text)">Your Message *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows="6"
-                    style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;resize:vertical"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  class="btn primary"
-                  style="width:100%;cursor:pointer"
-                >
-                  Send Message
-                </button>
-
-                <p style="margin-top:12px;font-size:13px;color:var(--sub)">
-                  * Required fields
-                </p>
+              <!-- modify this form HTML and place wherever you want your form -->
+              <form
+                action="https://formspree.io/f/movpyavr"
+                method="POST"
+              >
+                <label style="display:block;margin-bottom:16px">
+                  Your email:
+                  <input type="email" name="email" style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;margin-top:6px">
+                </label>
+                <label style="display:block;margin-bottom:16px">
+                  Your message:
+                  <textarea name="message" rows="6" style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;resize:vertical;margin-top:6px"></textarea>
+                </label>
+                <!-- your other form fields go here -->
+                <button type="submit" class="btn primary" style="width:100%;cursor:pointer">Send</button>
               </form>
             </div>
           </div>
