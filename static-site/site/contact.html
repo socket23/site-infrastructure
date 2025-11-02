@@ -79,7 +79,7 @@
             </div>
 
             <div class="card">
-              <!-- modify this form HTML and place wherever you want your form -->
+              <!-- Contact form with Formspree -->
               <form
                 action="https://formspree.io/f/movpyavr"
                 method="POST"
@@ -87,16 +87,35 @@
                 <!-- Honeypot spam protection - hidden field that bots will fill but humans won't see -->
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-                <label style="display:block;margin-bottom:16px">
-                  Your email:
-                  <input type="email" name="email" style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;margin-top:6px">
+                <!-- Custom subject line for emails -->
+                <input type="hidden" name="_subject" value="New contact from Socket23.com">
+
+                <!-- Redirect back to contact page with success message -->
+                <input type="hidden" name="_next" value="https://socket23.com/contact.html?success=true">
+
+                <label style="display:block;margin-bottom:16px;color:var(--text)">
+                  Name *
+                  <input type="text" name="name" required style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;margin-top:6px">
                 </label>
-                <label style="display:block;margin-bottom:16px">
-                  Your message:
-                  <textarea name="message" rows="6" style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;resize:vertical;margin-top:6px"></textarea>
+
+                <label style="display:block;margin-bottom:16px;color:var(--text)">
+                  Your Email *
+                  <input type="email" name="email" required style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;margin-top:6px">
                 </label>
-                <!-- your other form fields go here -->
-                <button type="submit" class="btn primary" style="width:100%;cursor:pointer">Send</button>
+
+                <label style="display:block;margin-bottom:16px;color:var(--text)">
+                  Subject *
+                  <input type="text" name="subject" required style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;margin-top:6px">
+                </label>
+
+                <label style="display:block;margin-bottom:16px;color:var(--text)">
+                  Your Message *
+                  <textarea name="message" required rows="6" style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;resize:vertical;margin-top:6px"></textarea>
+                </label>
+
+                <button type="submit" class="btn primary" style="width:100%;cursor:pointer">Send Message</button>
+
+                <p style="margin-top:12px;font-size:13px;color:var(--sub)">* Required fields</p>
               </form>
             </div>
           </div>
