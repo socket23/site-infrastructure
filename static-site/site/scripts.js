@@ -34,13 +34,26 @@
 
 // Convert service .card articles into collapsible summaries (title + first bullets visible)
 (function(){
+  // Run this code only on the services page
+  if(!document.location.pathname.includes('services.html')) return;
+
   // target cards inside panels (services page)
   const cards = document.querySelectorAll('section.panel .container .card');
   if(!cards || !cards.length) return;
+  
+  console.log('Found', cards.length, 'cards to process');
+  
   cards.forEach(card => {
     // skip cards that are already using <details> or are in Custom Engagements section
     if(card.tagName && card.tagName.toLowerCase() === 'details') return;
-    if(card.closest('section').querySelector('h2')?.textContent === 'Custom Engagements') return;
+    
+    const section = card.closest('section');
+    const sectionTitle = section?.querySelector('h2')?.textContent;
+    
+    if(sectionTitle === 'Custom Engagements') {
+      console.log('Skipping Custom Engagements card');
+      return;
+    }
     const h3 = card.querySelector('h3');
     if(!h3) return;
 
