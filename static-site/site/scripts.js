@@ -38,8 +38,9 @@
   const cards = document.querySelectorAll('section.panel .container .card');
   if(!cards || !cards.length) return;
   cards.forEach(card => {
-    // skip cards that are already using <details>
+    // skip cards that are already using <details> or are in Custom Engagements section
     if(card.tagName && card.tagName.toLowerCase() === 'details') return;
+    if(card.closest('section').querySelector('h2')?.textContent === 'Custom Engagements') return;
     const h3 = card.querySelector('h3');
     if(!h3) return;
 
