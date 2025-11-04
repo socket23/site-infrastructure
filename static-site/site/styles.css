@@ -40,13 +40,11 @@ a:hover{color:var(--text)}
 .steps{padding-left:18px}
 
 /* Collapsible summary styling for service offerings */
-.card .summary{cursor:pointer;border-left:4px solid var(--accent);padding-left:14px;position:relative}
-.card .summary::after{content:'▼';position:absolute;right:10px;top:50%;transform:translateY(-50%) rotate(-90deg);transition:transform 0.3s ease}
-.card.open .summary::after{transform:translateY(-50%) rotate(0)}
-.card .summary h3{display:inline;margin-right:8px}
-.card .summary ul{margin:8px 0}
-.card .collapsible-body{display:none;margin-top:12px;border-top:1px solid var(--line);padding-top:12px}
-.card.open .collapsible-body{display:block}
+details.card{cursor:pointer;border-left:4px solid var(--accent);padding-left:14px;position:relative}
+details.card::after{content:'▼';position:absolute;right:10px;top:20px;transform:rotate(-90deg);transition:transform 0.3s ease}
+details.card[open]::after{transform:rotate(0)}
+details.card summary{display:flex;align-items:center;font-size:inherit;font-weight:bold;padding-bottom:8px;}
+details.card ul{margin:8px 0}
 
 .footer{border-top:1px solid var(--line);padding:28px 0;color:var(--sub);text-align:center}
 
