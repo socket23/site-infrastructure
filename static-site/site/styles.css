@@ -40,10 +40,14 @@ a:hover{color:var(--text)}
 .steps{padding-left:18px}
 
 /* Collapsible summary styling for service offerings */
-details.card{cursor:pointer;border-left:4px solid var(--accent);padding-left:14px;position:relative}
-details.card::after{content:'▼';position:absolute;right:10px;top:20px;transform:rotate(-90deg);transition:transform 0.3s ease}
+details.card{border-left:4px solid var(--accent);padding-left:14px;position:relative;margin-bottom:24px}
+details.card::after{content:'▼';position:absolute;right:16px;top:20px;transform:rotate(-90deg);transition:transform 0.3s ease}
 details.card[open]::after{transform:rotate(0)}
-details.card summary{display:flex;align-items:center;font-size:inherit;font-weight:bold;padding-bottom:8px;}
+details.card summary{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-size:inherit;font-weight:600;padding:0 40px 12px 0;cursor:pointer;list-style:none}
+details.card summary::marker,details.card summary::-webkit-details-marker{display:none}
+details.card summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:8px}
+details.card .card-title{font-size:20px;line-height:1.35;font-weight:700;margin:0}
+details.card .card-subtitle{color:var(--sub);font-size:15px}
 details.card ul{margin:8px 0}
 
 .footer{border-top:1px solid var(--line);padding:28px 0;color:var(--sub);text-align:center}
