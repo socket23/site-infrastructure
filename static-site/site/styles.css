@@ -40,9 +40,7 @@ a:hover{color:var(--text)}
 .steps{padding-left:18px}
 
 /* Collapsible summary styling for service offerings */
-details.card{border-left:4px solid var(--accent);padding-left:14px;position:relative;margin-bottom:24px}
-details.card::after{content:'▼';position:absolute;right:16px;top:22px;transform:rotate(-90deg);transition:transform 0.3s ease}
-details.card[open]::after{transform:rotate(0)}
+details.card{border-left:4px solid var(--accent);padding-left:20px;position:relative;margin-bottom:24px}
 details.card summary{display:flex;flex-direction:column;align-items:flex-start;gap:12px;font-size:inherit;padding:0 48px 16px 0;cursor:pointer;list-style:none}
 details.card summary::marker,details.card summary::-webkit-details-marker{display:none}
 details.card summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:8px}
@@ -52,7 +50,8 @@ details.card .card-summary-subtitle{margin:0;color:var(--sub);font-weight:400}
 details.card .card-preview{margin:0;padding-left:20px;color:var(--sub);font-size:16px;line-height:1.5}
 details.card .card-preview li{margin-bottom:4px}
 details.card .card-preview li:last-child{margin-bottom:0}
-details.card .card-summary-cta{margin:4px 0 0;color:var(--accent);font-size:14px;font-weight:500}
+details.card .card-summary-cta{margin:4px 0 0;color:var(--accent);font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px}
+details.card .card-summary-cta::before{content:'\\2193';display:inline-block;font-size:16px;line-height:1}
 details.card ul{margin:8px 0}
 
 .footer{border-top:1px solid var(--line);padding:28px 0;color:var(--sub);text-align:center}
