@@ -17,26 +17,86 @@ a:hover{color:var(--text)}
 .menu a:hover{color:var(--accent)}
 .menu-btn{display:none;background:var(--btn);color:var(--text);border:1px solid var(--line);padding:6px 10px;border-radius:10px;cursor:pointer}
 
-.hero{padding:96px 0 72px;background:radial-gradient(80% 80% at 50% 0%, rgba(0,209,178,.12), transparent 60%)}
-.hero h1{font-size:44px;line-height:1.1;margin:0 0 8px}
-.hero .tagline{font-size:20px;color:var(--accent);font-weight:600;margin:0 0 12px}
+.hero{padding:96px 0 72px;background:radial-gradient(80% 80% at 20% 0%, rgba(0,209,178,.18), transparent 65%);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%, rgba(0,209,178,.08), transparent 55%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;position:relative;z-index:1}
+.hero h1{font-size:48px;line-height:1.05;margin:0 0 18px}
+.hero .tagline{font-size:20px;color:var(--accent);font-weight:600;margin:0 0 18px}
 .accent{color:var(--accent)}
 .hero p{color:var(--sub);margin:0 0 24px}
+.eyebrow{text-transform:uppercase;letter-spacing:.3em;font-size:12px;color:var(--sub);margin:0 0 18px}
+.hero-checklist{list-style:none;padding:0;margin:0 0 16px;color:var(--text)}
+.hero-checklist li{margin-bottom:10px;font-size:15px}
 .actions{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-block;padding:12px 18px;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);transition:all .2s}
 .btn.primary{background:var(--accent);color:#06251f;border-color:transparent}
 .btn.primary:hover{background:#00e6c3;transform:translateY(-2px)}
 .btn.ghost{background:var(--ghost);color:var(--text)}
 .btn.ghost:hover{background:var(--btn);transform:translateY(-2px)}
+.badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.hero-chip{padding:6px 12px;border-radius:999px;border:1px solid rgba(0,209,178,.25);background:rgba(17,22,29,.7);font-size:13px;color:var(--accent)}
+.hero-visual{display:flex;flex-direction:column;gap:18px}
+.stat-card{background:linear-gradient(145deg,#0f161f,#121a26);padding:20px;border-radius:18px;border:1px solid rgba(255,255,255,.04);box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.stat-label{margin:0;color:var(--sub);font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+.stat-value{margin:4px 0;font-size:36px;font-weight:600}
+.stat-divider{height:1px;width:100%;background:linear-gradient(90deg,transparent,#213040,transparent);margin:10px 0}
+.hero-panel{background:linear-gradient(180deg,#131c28,#101722);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.hero-panel h3{margin:0 0 12px;font-size:18px}
+.hero-panel ul{list-style:none;padding:0;margin:0}
+.hero-panel li{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:15px}
+.hero-panel li:last-child{border-bottom:none}
+.hero-panel strong{color:var(--accent)}
+.microcopy{font-size:12px;color:var(--sub);margin-top:12px}
 
 .panel{padding:56px 0;border-top:1px solid var(--line);background:linear-gradient(180deg, rgba(17,22,29,.25), transparent)}
 .panel.alt{background:linear-gradient(180deg, rgba(11,15,20,.25), transparent)}
 .panel h2{margin:0 0 24px;font-size:32px}
+.section-header{max-width:720px;margin-bottom:32px}
+.section-header h2{margin-bottom:12px}
+.section-header p{margin:0;color:var(--sub)}
+.trust-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(circle at 50% 50%,rgba(0,209,178,.06),transparent 70%);padding:28px 0;margin-bottom:12px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center}
+.trust-item{padding:12px 0}
+.trust-item .stat-value{font-size:30px;color:var(--accent);margin:0}
+.trust-item .stat-label{font-size:13px;color:var(--sub);text-transform:uppercase;letter-spacing:.1em;margin:4px 0 0}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
 .card h3{margin:0 0 6px}
 .card ul{margin:8px 0}
+.highlight-grid{position:relative}
+.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.service-card{border-radius:18px;padding:22px;background:linear-gradient(145deg,rgba(17,22,29,.85),rgba(12,16,22,.85));border:1px solid rgba(255,255,255,.04);box-shadow:0 25px 50px rgba(0,0,0,.35);transition:transform .2s,border-color .2s}
+.service-card:hover{transform:translateY(-6px);border-color:rgba(0,209,178,.4)}
+.icon-badge{width:48px;height:48px;border-radius:14px;background:rgba(0,209,178,.12);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:12px}
+.service-card p{color:var(--sub);margin-bottom:16px}
+.tag-list{list-style:none;padding:0;margin:0;display:flex;gap:10px;flex-wrap:wrap;font-size:13px}
+.tag-list li{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.08);color:var(--sub)}
+.tilt-card{transition:transform .25s,border-color .25s}
+.tilt-card:hover{transform:translateY(-6px);border-color:rgba(0,209,178,.4)}
+.checklist{list-style:none;padding:0;margin:16px 0;color:var(--text)}
+.checklist li{margin-bottom:8px;padding-left:22px;position:relative}
+.checklist li::before{content:"";position:absolute;left:0;top:8px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.spotlight-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}
+.compliance-panel{background:radial-gradient(80% 80% at 10% 20%, rgba(0,209,178,.1), transparent 60%)}
+.compliance-board{background:#0f161f;border:1px solid rgba(255,255,255,.05);border-radius:18px;padding:18px;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.compliance-row{display:flex;justify-content:space-between;padding:12px;border-bottom:1px solid rgba(255,255,255,.06);font-size:15px}
+.compliance-row strong{color:var(--accent)}
+.compliance-row:last-child{border-bottom:none}
+.compliance-note{margin-top:16px;font-size:13px;color:var(--sub)}
+.process-panel{background:linear-gradient(180deg, rgba(0,0,0,.15), transparent)}
+.process-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.process-step{background:rgba(11,15,20,.7);border:1px solid rgba(255,255,255,.05);border-radius:20px;padding:20px;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.process-step span{display:inline-flex;width:36px;height:36px;border-radius:50%;background:rgba(0,209,178,.15);color:var(--accent);align-items:center;justify-content:center;font-weight:600;margin-bottom:12px}
+.process-step p{color:var(--sub)}
+.testimonial-panel{position:relative;overflow:hidden}
+.testimonial-slider{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.testimonial-card{background:linear-gradient(160deg,#121a26,#0f141b);border:1px solid rgba(255,255,255,.05);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.45);position:relative}
+.testimonial-card::before{content:"“";font-size:48px;color:rgba(255,255,255,.08);position:absolute;top:12px;left:18px}
+.testimonial-card .quote{margin:0 0 16px;font-size:17px;line-height:1.5;color:var(--text)}
+.testimonial-card .author{margin:0;color:var(--sub);font-size:14px}
+.cta-panel .container{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.cta-panel .actions{justify-content:flex-end}
 .steps{padding-left:18px}
 
 /* Collapsible summary styling for service offerings */
@@ -57,11 +117,21 @@ details.card ul{margin:8px 0}
 
 @media (max-width:900px){
   .grid-3{grid-template-columns:1fr 1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .spotlight-grid{grid-template-columns:1fr}
+  .process-flow{grid-template-columns:repeat(2,1fr)}
+  .testimonial-slider{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:640px){
   .grid-3,.grid-2{grid-template-columns:1fr}
   .hero h1{font-size:34px}
   .hero .tagline{font-size:18px}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .service-grid{grid-template-columns:1fr}
+  .process-flow{grid-template-columns:1fr}
+  .testimonial-slider{grid-template-columns:1fr}
+  .cta-panel .container{flex-direction:column;align-items:flex-start}
   .menu{display:none}
   .menu[data-state="open"]{display:flex;flex-direction:column;position:absolute;top:60px;right:10px;background:var(--muted);padding:10px;border-radius:12px;border:1px solid var(--line)}
   .menu-btn{display:inline-block}
