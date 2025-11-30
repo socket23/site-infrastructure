@@ -11,7 +11,7 @@ services:
     volumes:
       - ./site:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - /etc/ssl/socket23:/etc/nginx/certs:ro
+      - /home/analyst/socket23_cert:/etc/nginx/certs:ro
       - type: tmpfs
         target: /tmp
       - type: tmpfs
